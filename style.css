@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brand: rgb(250,100,20);
+    --dark: rgb(30,30,35);
+    --bg: rgb(60,60,65);
+
+    --rounded: 0.5rem;
+    --shadow:
+    0px .2rem 2rem rgba(0,0,0,0.1),
+    0px .2rem 1rem rgba(0,0,0,0.1),
+    0px .2rem 0.5rem rgba(0,0,0,0.2);
+}
+
+html {
+    font-family: 'poppins';
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+    background-image: url(/img/bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--dark);
+    background: var(--bg);
+}
+
+.recipe-card-grid {
+    display: grid;
+    padding: 4rem;
+    grid-template-columns: 18rem 18rem 18rem 18rem;
+    grid-template-rows: auto;
+    gap: 2rem;
+    width: 100%;
+}
+
+.recipe-card {
+    position:relative;
+    width: 100%;
+    background-color: White;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+.recipe-card img.thumbnail {
+    display: block;
+    width: 100%;
+}
+
+h1,h2,h3 {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.recipe-card h1 {
+    font-size: 1rem;
+    text-transform: none;
+    font-weight: 400;
+    padding: 0.5rem 1rem 1rem 1rem;
+}
+
+/* FILTER MENU */
+
+.filter-pane {
+    height: calc(100vh - 8rem);
+    width: 20rem;
+    background-color: rgba(255,255,255,0.25);
+    backdrop-filter: blur(1rem);
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    border-radius: var(--rounded);
+    box-shadow: 
+    0px .2rem 2rem rgba(0,0,0,0.1),
+    0px .2rem 1rem rgba(0,0,0,0.1),
+    0px .2rem 0.5rem rgba(0,0,0,0.2);
+}
+
+.filter-pane h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 2rem 0 0 0;
+    font-weight: 300;
+    color: white;
+}
+
+.meal-type-filters {
+    display: flex;
+    justify-content: center;
+}
+
+.menu .meal-filter-icon {
+    width: 5rem;
+    border-radius: 1rem;
+}
+
+.menu .meal-filter-icon:hover {
+    background-color: red;
+}
+
+
+/* RECIPE PAGE */
+
+.recipe-page {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(100vh);
+    background-color: rgba(40,40,45,0.8);
+    color: white;
+    backdrop-filter: blur(2rem);
+
+    transition: ease-in-out transform 0.5s;
+    
+}
+
+.showpage /* make recipe-page visible */ {
+    transform: translateY(0);
+}
+
+.recipe-page-info {
+    height: 100vh;
+    width: 60vw;
+    padding: 4rem;
+}
+
+.recipe-page h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.recipe-page-image {
+    position: absolute;
+    top: 0; right: 0;
+    height: 100vh;
+    width:40vw;
+    background-size: cover;
+    background-position: center center;
+}
+
+.step-number {
+    display: block;
+    color: var(--brand);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1rem;
+
+    text-transform: uppercase;
+}
+
+
+.quantity {
+    opacity: 0.5;
+}
+
+.recipe-page-info {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.recipe-page-info h1 {
+    font-weight: 700;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.recipe-page-info h1::after {
+    content: " |";
+    color: var(--brand);
+}
+
+#recipe-page-ingredients {
+    list-style: none;
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#recipe-page-method {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-column: 2;
+    grid-row: 1/-1;
+}
+
+#recipe-page-method > p {
+    padding-top: 1rem;
+}
+
+#recipe-page-ingredients li {
+    padding-top: 0.5rem;
+}
+
+
+.veg-label {
+    display: block;
+    content: "Veg";
+    position: absolute;
+    top: 1rem;
+    height: 2rem;
+    width: 2rem;
+    background-color: green;
+    font-size: 10px;
+    color: white;
+    
+}
+
+

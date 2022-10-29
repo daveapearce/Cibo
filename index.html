@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Card Layout</title>
+</head>
+<body>
+
+    <div class="recipe-list-container">
+        <div class="recipe-card-grid" id="recipe-card-grid">
+        </div>
+    </div>
+
+    <div id="recipe-page" class="recipe-page" onclick="hideRecipePage()">
+        <div class="recipe-page-info">
+            <h1 class="recipe-page-title" id="recipe-page-title"></h1>
+            <div id="recipe-page-ingredients"></div>
+            <div id="recipe-page-method"></div>
+        </div>
+        <div class="recipe-page-image" id="recipe-page-image"></div>
+
+    </div>
+
+    <!-- Link JS file with Recipe Data JSON-->
+    <script src="JS/recipeData.js"></script>
+    <!-- Link functions script -->
+    <script src="js/functions.js"></script>
+
+</body>
+</html>
